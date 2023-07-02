@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int	spaces_count(const char *s)
+int spaces_count(const char *s)
 {
 	int spc = 0;
 	for( ; *s; s++) {
