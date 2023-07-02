@@ -10,9 +10,9 @@ int spaces_count(const char *s)
     return spc;
 }
 
-int main(int argc, char **argv)
+int main()
 {
-    if(argc > 1)
-        printf("%d\n", spaces_count(argv[1]));
+    char *s = {" H e l l o , w o r l d "};
+    printf("%d\n", spaces_count(s));
     return 0;
 }
