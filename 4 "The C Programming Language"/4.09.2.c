@@ -14,18 +14,18 @@ int main()
                 printf("(%c", c);
                 wrd = 1;
             } else {
-                printf("%c", c);
+                putchar(c);
             }
             continue;
         }
         /* whitespace, '\t' or '\n' */
         if(wrd) {
-            printf(")");
+            putchar(')');
             wrd = 0;
         }
         if(c == '\n' && !emp) {
             /* put '\n' only if the line contains words */
-            printf("\n");
+            putchar('\n');
             emp = 1;
         }
     }
