@@ -1,31 +1,27 @@
 /* remove all spaces from the string */
 #include <stdio.h>
 
-void delete_spaces(char *str)
+void delete_chars(char *s, char c)
 {
-    enum {spc = ' '};
-    int i;
-    for(i = 0; str[i] != '\0'; i++) {
-        if(str[i] == spc) {
-            int j = i;
-            int k = 1;
-            while(str[j+k] == spc)
-                k++;
-            while(1) {
-                str[j] = str[j+k];
-                if(str[j] == '\0')
-                    break;
-                j += 1;
-            }
+    char *src;
+    char *dst;
+    src = dst = s;
+    while(1) {
+        if(*src != c) {
+            *dst = *src;
+            if(*dst == '\0')
+                return;
+            dst++;
         }
+        src++;
     }
 }
 
 int main()
 {   
-    char str[] = {"    H  e    ll o,  w  or     l  d!    "};
-    printf("%s\n", str);
-    delete_spaces(str);
-    printf("%s\n", str);
+    char s[] = {"    H  e    ll o,  w  or     l  d   !         "};
+    printf("%s\n", s);
+    delete_chars(s, ' ');
+    printf("%s\n", s);
     return 0;
 }
